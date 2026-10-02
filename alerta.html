@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmaSalud Perú - Alerta</title>
+    <link rel="stylesheet" href="css/alerta.css">
+</head>
+<body>
+    <!-- Confirmación visual (checkbox invisible) -->
+    <input type="checkbox" id="check-recordatorio">
+
+    <!-- ENCABEZADO -->
+    <header>
+        <div class="logo">
+            <img src="img/cruz-logo.jpg" alt="Logo Cruz" class="cruz-img">
+            <h1>FarmaSalud Perú</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="registro.html">Delivery</a></li>
+                <li><a href="alerta.html">Alerta</a></li>
+                <li><a href="ubicacion.html">Ubicación</a></li>
+                <li>
+                    <div id="auth-container">
+                        <a href="login.html" class="btn-login-header">Iniciar Sesión</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <section class="content-section">
+            <div class="recordatorio-header text-center">
+                <img src="img/campana alerta.jpg" alt="Alerta" class="icono-campana-pulso">
+                <h2>Configurar Recordatorio de Receta</h2>
+                <p>Alertas e información sobre el seguimiento de tus tratamientos continuos.</p>
+            </div>
+
+            <div class="mensaje-exito-recordatorio">
+                ✔ <strong>¡Recordatorio activado!</strong> Te avisaremos cuando sea momento de renovar tu receta.
+            </div>
+        </section>
+    </main>
+
+    <!-- BARRA DE NAVEGACIÓN INFERIOR FIJA -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-btn btn-inicio">
+            <img src="img/inicio.png" alt="Inicio" class="nav-icon-img">
+            <span>Inicio</span>
+        </a>
+        <a href="catalogo.html" class="nav-btn btn-catalogo">
+            <img src="img/catalogo.jpg" alt="Catálogo" class="nav-icon-img">
+            <span>Catálogo</span>
+        </a>
+        <a href="registro.html" class="nav-btn btn-delivery-tab">
+            <img src="img/delivery.jpg" alt="Delivery" class="nav-icon-img">
+            <span>Delivery</span>
+        </a>
+        <a href="alerta.html" class="nav-btn btn-recordatorio-tab activo">
+            <img src="img/alerta.png" alt="Alerta" class="nav-icon-img">
+            <span>Alerta</span>
+        </a>
+        <a href="ubicacion.html" class="nav-btn btn-ubicacion">
+            <img src="img/sedes.png" alt="Sedes" class="nav-icon-img">
+            <span>Sedes</span>
+        </a>
+    </nav>
+
+    <footer>
+        <p>&copy; 2026 FarmaSalud Perú - Portal Informativo de Orientación Farmacéutica.</p>
+    </footer>
+
+    <script type="module" src="js/auth/auth.js"></script>
+    <script type="module" src="js/alerta/alerta.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso - FarmaSalud Perú</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+    <div class="login-card">
+        <!-- Logo con la cruz verde -->
+        <div class="logo-container">
+            <div class="logo-icon">+</div>
+        </div>
+
+        <h2>FarmaSalud Perú</h2>
+        <p class="subtitle">Portal de Atención y Servicios</p>
+
+        <!-- Pestañas -->
+        <div class="tabs">
+            <button id="tab-login" class="activo">Iniciar Sesión</button>
+            <button id="tab-registro">Crear Cuenta</button>
+        </div>
+
+        <!-- FORMULARIO 1: INICIAR SESIÓN -->
+        <form id="form-login" class="activo">
+            <label for="correo-login">Correo electrónico:</label>
+            <input type="email" id="correo-login" required>
+
+            <label for="contrasena-login">Contraseña:</label>
+            <input type="password" id="contrasena-login" required>
+
+            <button type="submit" class="btn-submit">Entrar</button>
+        </form>
+
+        <!-- FORMULARIO 2: CREAR CUENTA -->
+        <form id="form-registro">
+            <label for="nombre">Nombre completo:</label>
+            <input type="text" id="nombre" required>
+
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" id="correo" required>
+
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" required>
+
+            <button type="submit" class="btn-submit">Registrarse</button>
+        </form>
+
+        <!-- Enlace al portal -->
+        <a href="index.html" class="volver-link">&larr; Volver al Portal Principal</a>
+    </div>
+
+    <script type="module" src="js/auth/login.js"></script>
+</body>
+</html>

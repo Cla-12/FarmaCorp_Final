@@ -1,0 +1,42 @@
+/* --- RESET BÁSICO --- */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
+body { background-color: #f8f9fa; color: #333; padding-bottom: 70px; }
+input[type="radio"], #check-confirmacion, #check-recordatorio { display: none; }
+
+/* --- ENCABEZADO Y DEGRADADO --- */
+header { background: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 50%, #ffffff 100%); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.logo { display: flex; align-items: center; gap: 10px; }
+.cruz-img { width: 35px; height: 35px; object-fit: contain; }
+
+/* --- MENÚ SUPERIOR --- */
+nav ul { display: flex; list-style: none; gap: 15px; }
+nav ul a { cursor: pointer; color: #1b5e20; font-weight: bold; text-decoration: none; padding: 6px 10px; border-radius: 4px; transition: color 0.3s ease, background-color 0.3s ease; }
+nav ul a:hover { color: #fff; background-color: #2e7d32; }
+nav ul li a.btn-login-header { display: inline-block; text-decoration: none; background-color: #2e7d32; color: #ffffff !important; font-weight: bold; padding: 6px 14px; border-radius: 20px; transition: background-color 0.3s ease, transform 0.2s ease; }
+nav ul li a.btn-login-header:hover { background-color: #1b5e20; transform: scale(1.04); }
+
+/* --- CONTENEDORES --- */
+.main-container { max-width: 1000px; margin: 20px auto; padding: 0 15px; }
+.content-section { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); animation: fadeInUp 0.4s ease; }
+
+/* --- BARRA NAVEGACIÓN INFERIOR FIJA --- */
+.bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; height: 60px; background-color: #ffffff; display: flex; justify-content: space-around; align-items: center; box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); z-index: 1000; }
+.nav-btn { background: none; color: #666; text-decoration: none; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 0.75rem; cursor: pointer; width: 100%; height: 100%; transition: color 0.3s; }
+.nav-icon-img { width: 22px; height: 22px; object-fit: contain; margin-bottom: 2px; }
+.nav-btn:hover { color: #2e7d32; }
+.nav-btn.activo { color: #2e7d32; font-weight: bold; }
+
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+
+footer { text-align: center; padding: 15px; background-color: #e0e0e0; margin-top: 20px; }
+
+/* --- SECCIÓN INICIO --- */
+.hero-banner { text-align: center; padding: 20px 10px; margin-bottom: 25px; border-bottom: 2px solid #e8f5e9; }
+.hero-banner h2 { color: #1b5e20; margin-bottom: 10px; }
+.hero-banner p { color: #555; max-width: 700px; margin: 0 auto 15px auto; line-height: 1.4; }
+.servicios-container h3 { text-align: center; color: #2e7d32; margin-bottom: 20px; }
+.grid-servicios { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+.servicio-card { background: #f4fbf7; border: 1px solid #c8e6c9; border-radius: 8px; padding: 15px; text-align: center; }
+.servicio-icon-img { width: 45px; height: 45px; object-fit: contain; margin-bottom: 8px; }
+.btn-primary { display: inline-block; background-color: #2e7d32; color: white; padding: 8px 14px; text-decoration: none; border-radius: 4px; border: none; cursor: pointer; font-weight: bold; text-align: center; transition: background-color 0.4s ease, transform 0.2s ease; }
+.btn-primary:hover { background-color: #1b5e20; transform: scale(1.02); }

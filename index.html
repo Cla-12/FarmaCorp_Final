@@ -4,52 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FarmaSalud Perú - Portal Informativo</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-
-    <!-- Controles de Pestañas con CSS Puro -->
-    <input type="radio" name="tabs" id="tab-inicio" checked>
-    <input type="radio" name="tabs" id="tab-catalogo">
-    <input type="radio" name="tabs" id="tab-delivery">
-    <input type="radio" name="tabs" id="tab-recordatorio">
-    <input type="radio" name="tabs" id="tab-ubicacion">
-
-    <!-- Controles de Filtro de Categoría con CSS Puro -->
-    <input type="radio" name="categoria" id="cat-todas" checked>
-    <input type="radio" name="categoria" id="cat-libre">
-    <input type="radio" name="categoria" id="cat-receta">
-
-    <!-- Confirmaciones Visuales (Checkboxes invisibles) -->
-    <input type="checkbox" id="check-confirmacion">
-    <input type="checkbox" id="check-recordatorio">
 
     <!-- ENCABEZADO -->
     <header>
         <div class="logo">
-            <!-- Imagen de la Cruz Estática -->
             <img src="img/cruz-logo.jpg" alt="Logo Cruz" class="cruz-img">
             <h1>FarmaSalud Perú</h1>
         </div>
         <nav>
             <ul>
-                <li><label for="tab-inicio">Inicio</label></li>
-                <li><label for="tab-catalogo">Catálogo</label></li>
-                <li><label for="tab-delivery">Delivery</label></li>
-                <li><label for="tab-recordatorio">Alerta</label></li>
-                <li><label for="tab-ubicacion">Ubicación</label></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="registro.html">Delivery</a></li>
+                <li><a href="alerta.html">Alerta</a></li>
+                <li><a href="ubicacion.html">Ubicación</a></li>
+                <li>
+                    <div id="auth-container">
+                        <a href="login.html" class="btn-login-header">Iniciar Sesión</a>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
 
     <main class="main-container">
-
-        <!-- 1. SECCIÓN INICIO -->
-        <section id="sec-inicio" class="content-section">
+        <section class="content-section">
             <div class="hero-banner">
                 <h2>Bienvenido a FarmaSalud Perú</h2>
                 <p>Portal institucional de orientación farmacéutica, consulta de medicamentos y servicio de entrega a domicilio. Te acompañamos en la gestión de tu salud brindándote información clara, atención personalizada y la garantía de recibir tus tratamientos de forma rápida, continua y segura.</p>
-                <label for="tab-catalogo" class="btn-primary">Ver Catálogo</label>
+                <a href="catalogo.html" class="btn-primary">Ver Catálogo</a>
             </div>
 
             <div class="servicios-container">
@@ -78,147 +64,36 @@
                 </div>
             </div>
         </section>
-
-        <!-- 2. SECCIÓN CATÁLOGO -->
-        <section id="sec-catalogo" class="content-section">
-            <h2>Catálogo de Medicamentos</h2>
-            
-            <div class="filtro-container">
-                <input type="text" placeholder="Buscar medicamento..." class="input-buscador">
-                <div class="filtro-botones">
-                    <label for="cat-todas" class="btn-filtro btn-cat-todas">Todas</label>
-                    <label for="cat-libre" class="btn-filtro btn-cat-libre">Venta Libre</label>
-                    <label for="cat-receta" class="btn-filtro btn-cat-receta">Bajo Prescripción</label>
-                </div>
-            </div>
-
-            <div class="grid-container">
-                <article class="card card-libre">
-                    <span class="badge libre">Venta Libre</span>
-                    <img src="img/panadol.png" alt="Panadol Forte" class="card-img">
-                    <div class="card-body">
-                        <span class="presentation">CAJA 20 TABLETAS</span>
-                        <h4>Panadol Forte 500 mg</h4>
-                        <p class="stock-tag disponible">✔ Disponible en stock</p>
-                        <p class="price">S/ 4.20 <small>Precio Referencial</small></p>
-                        <label for="tab-delivery" class="btn-card">Solicitar Delivery</label>
-                    </div>
-                </article>
-
-                <article class="card card-libre">
-                    <span class="badge libre">Venta Libre</span>
-                    <img src="img/Ibuprofeno.png" alt="Ibuprofeno" class="card-img">
-                    <div class="card-body">
-                        <span class="presentation">CAJA 10 TABLETAS</span>
-                        <h4>Ibuprofeno 400 mg</h4>
-                        <p class="stock-tag disponible">✔ Disponible en stock</p>
-                        <p class="price">S/ 3.50 <small>Precio Referencial</small></p>
-                        <label for="tab-delivery" class="btn-card">Solicitar Delivery</label>
-                    </div>
-                </article>
-
-                <article class="card card-receta">
-                    <span class="badge receta">Requiere Receta</span>
-                    <img src="img/amoxicilina.png" alt="Amoxicilina" class="card-img">
-                    <div class="card-body">
-                        <span class="presentation">CAJA 10 TABLETAS</span>
-                        <h4>Amoxicilina 500 mg</h4>
-                        <p class="stock-tag disponible">✔ Disponible en stock</p>
-                        <p class="price">S/ 15.20 <small>Precio Referencial</small></p>
-                        <label for="tab-delivery" class="btn-card">Solicitar Delivery</label>
-                    </div>
-                </article>
-
-                <article class="card card-receta">
-                    <span class="badge receta">Requiere Receta</span>
-                    <img src="img/LosartanPotasico.jpg" alt="Losartán" class="card-img">
-                    <div class="card-body">
-                        <span class="presentation">CAJA 30 TABLETAS</span>
-                        <h4>Losartán Potásico 50 mg</h4>
-                        <p class="stock-tag agotado">✖ Agotado temporalmente</p>
-                        <p class="price">S/ 12.00 <small>Precio Referencial</small></p>
-                        <label for="tab-delivery" class="btn-card">Solicitar Delivery</label>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- 3. SECCIÓN DELIVERY -->
-        <section id="sec-delivery" class="content-section">
-            <h2>Solicitud de Delivery de Medicamentos</h2>
-            <form action="#">
-                <fieldset>
-                    <legend>Datos para el Envío</legend>
-
-                    <label for="del-nombre">Nombre Completo:</label>
-                    <input type="text" id="del-nombre" required placeholder=>
-
-                    <label for="del-direccion">Dirección de Entrega:</label>
-                    <input type="text" id="del-direccion" required placeholder=>
-
-                    <label for="del-receta">Adjuntar Receta Médica (PDF o Imagen):</label>
-                    <input type="file" id="del-receta" accept="image/*,.pdf">
-
-                    <label for="check-confirmacion" class="btn-delivery btn-enviar-delivery">Enviar Pedido</label>
-                </fieldset>
-            </form>
-
-            <div class="mensaje-confirmacion">
-                ✔ ¡Pedido de delivery registrado con éxito! Tu solicitud está siendo procesada.
-            </div>
-        </section>
-
-        <!-- 4. SECCIÓN ALERTA Y RECORDATORIO -->
-        <section id="sec-recordatorio" class="content-section">
-            <div class="recordatorio-header text-center">
-                <!-- Imagen de la Campana Animada -->
-                <img src="img/campana alerta.jpg" alt="Alerta" class="icono-campana-pulso">
-                <h2>Configurar Recordatorio de Receta</h2>
-                <p>Alertas e información sobre el seguimiento de tus tratamientos continuos.</p>
-            </div>
-
-            <div class="mensaje-exito-recordatorio">
-                ✔ <strong>¡Recordatorio activado!</strong> Te avisaremos cuando sea momento de renovar tu receta.
-            </div>
-        </section>
-
-        <!-- 5. SECCIÓN UBICACIÓN -->
-        <section id="sec-ubicacion" class="content-section">
-            <h2>Sedes y Atención</h2>
-            <p><strong>Atención Presencial:</strong> Av. Principal 123, Lima - Perú</p>
-            <p><strong>Horario:</strong> Lunes a Sábado de 8:00 am a 8:00 pm</p>
-            <p><strong>Teléfono:</strong> (01) 456-7890</p>
-        </section>
-
     </main>
 
     <!-- BARRA DE NAVEGACIÓN INFERIOR FIJA -->
     <nav class="bottom-nav">
-        <label for="tab-inicio" class="nav-btn btn-inicio">
+        <a href="index.html" class="nav-btn btn-inicio activo">
             <img src="img/inicio.png" alt="Inicio" class="nav-icon-img">
             <span>Inicio</span>
-        </label>
-        <label for="tab-catalogo" class="nav-btn btn-catalogo">
+        </a>
+        <a href="catalogo.html" class="nav-btn btn-catalogo">
             <img src="img/catalogo.jpg" alt="Catálogo" class="nav-icon-img">
             <span>Catálogo</span>
-        </label>
-        <label for="tab-delivery" class="nav-btn btn-delivery-tab">
+        </a>
+        <a href="registro.html" class="nav-btn btn-delivery-tab">
             <img src="img/delivery.jpg" alt="Delivery" class="nav-icon-img">
             <span>Delivery</span>
-        </label>
-        <label for="tab-recordatorio" class="nav-btn btn-recordatorio-tab">
+        </a>
+        <a href="alerta.html" class="nav-btn btn-recordatorio-tab">
             <img src="img/alerta.png" alt="Alerta" class="nav-icon-img">
             <span>Alerta</span>
-        </label>
-        <label for="tab-ubicacion" class="nav-btn btn-ubicacion">
+        </a>
+        <a href="ubicacion.html" class="nav-btn btn-ubicacion">
             <img src="img/sedes.png" alt="Sedes" class="nav-icon-img">
             <span>Sedes</span>
-        </label>
+        </a>
     </nav>
 
     <footer>
         <p>&copy; 2026 FarmaSalud Perú - Portal Informativo de Orientación Farmacéutica.</p>
     </footer>
 
+    <script type="module" src="js/auth/auth.js"></script>
 </body>
 </html>

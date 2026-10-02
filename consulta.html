@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis pedidos - FarmaSalud Perú</title>
+    <link rel="stylesheet" href="css/consulta.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="img/cruz-logo.jpg" alt="Logo Cruz" class="cruz-img">
+            <h1>FarmaSalud Perú</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="registro.html">Delivery</a></li>
+                <li><a href="consulta.html">Mis pedidos</a></li>
+                <li><div id="auth-container"><a href="login.html" class="btn-login-header">Iniciar Sesión</a></div></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <section class="content-section">
+            <h2>Mis pedidos de delivery</h2>
+            <p id="estado-consulta">Cargando pedidos...</p>
+            <div class="tabla-wrap">
+                <table>
+                    <thead>
+                        <tr><th>Código</th><th>Dirección</th><th>Medicamentos</th><th>Receta</th><th>Estado</th><th>Fecha</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody id="tabla-pedidos"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="js/consulta/consulta.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
+body { background-color: #f8f9fa; color: #333; }
+input[type="checkbox"] { display: none; }
+header { background: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 50%, #ffffff 100%); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.logo { display: flex; align-items: center; gap: 10px; }
+.cruz-img { width: 35px; height: 35px; object-fit: contain; }
+nav ul { display: flex; list-style: none; gap: 15px; align-items: center; }
+nav ul a { color: #1b5e20; font-weight: bold; text-decoration: none; padding: 6px 10px; border-radius: 4px; transition: color 0.3s ease, background-color 0.3s ease; }
+nav ul a:hover { color: #fff; background-color: #2e7d32; }
+nav ul li a.btn-login-header { background-color: #2e7d32; color: #ffffff !important; padding: 6px 14px; border-radius: 20px; }
+.main-container { max-width: 1000px; margin: 20px auto; padding: 0 15px; }
+.content-section { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); animation: fadeInUp 0.4s ease; }
+.content-section h2 { color: #1b5e20; margin-bottom: 15px; }
+.content-section p { margin: 8px 0; }
+.btn-delivery { display: inline-block; background-color: #2e7d32; color: white; padding: 8px 14px; text-decoration: none; border-radius: 4px; border: none; cursor: pointer; font-weight: bold; font-size: 1rem; text-align: center; transition: background-color 0.4s ease, transform 0.2s ease; }
+.btn-delivery:hover { background-color: #1b5e20; transform: scale(1.02); }
+.mensaje-confirmacion { display: none; margin-top: 15px; padding: 12px; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 4px; }
+#check-confirmacion:checked ~ .main-container .mensaje-confirmacion { display: block; animation: animarConfirmacion 0.5s ease-out; }
+@keyframes animarConfirmacion { 0% { opacity: 0; transform: scale(0.8) translateY(-10px); } 100% { opacity: 1; transform: scale(1) translateY(0); } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+form fieldset { border: 1px solid #ddd; padding: 15px; border-radius: 6px; display: flex; flex-direction: column; gap: 12px; }
+form label { font-weight: bold; font-size: 0.9rem; }
+form input[type="text"], .select-input { padding: 8px; border: 1px solid #ccc; border-radius: 4px; }

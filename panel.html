@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel - FarmaSalud Perú</title>
+    <link rel="stylesheet" href="css/panel.css">
+</head>
+<body>
+    <input type="checkbox" id="check-confirmacion">
+    <header>
+        <div class="logo">
+            <img src="img/cruz-logo.jpg" alt="Logo Cruz" class="cruz-img">
+            <h1>FarmaSalud Perú</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="panel.html">Panel</a></li>
+                <li><div id="auth-container"><a href="login.html" class="btn-login-header">Iniciar Sesión</a></div></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <section class="content-section">
+            <h2>Panel de pedidos de delivery</h2>
+            <form id="form-panel">
+                <fieldset>
+                    <legend id="titulo-form">Nuevo pedido (atención presencial)</legend>
+                    <label for="pan-nombre">Nombre Completo:</label>
+                    <input type="text" id="pan-nombre" required>
+                    <label for="pan-direccion">Dirección de Entrega:</label>
+                    <input type="text" id="pan-direccion" required>
+                    <label for="pan-medicamentos">Medicamentos solicitados:</label>
+                    <input type="text" id="pan-medicamentos" required>
+                    <label for="pan-estado">Estado:</label>
+                    <select id="pan-estado" class="select-input" disabled>
+                        <option value="registrado">registrado</option>
+                        <option value="atendido">atendido</option>
+                        <option value="rechazado">rechazado</option>
+                    </select>
+                    <button type="submit" id="btn-panel" class="btn-delivery">Crear pedido</button>
+                    <button type="button" id="btn-cancelar" class="btn-delivery" hidden>Cancelar edición</button>
+                </fieldset>
+            </form>
+            <div class="mensaje-confirmacion">✔ <span id="texto-confirmacion"></span></div>
+            <p id="aviso-panel">Cargando pedidos...</p>
+            <div class="tabla-wrap">
+                <table>
+                    <thead>
+                        <tr><th>ID</th><th>Código</th><th>Cliente</th><th>Dirección</th><th>Medicamentos</th><th>Receta</th><th>Estado</th><th>Fecha</th><th>Acciones</th></tr>
+                    </thead>
+                    <tbody id="tabla-panel"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="js/panel/panel.js"></script>
+</body>
+</html>

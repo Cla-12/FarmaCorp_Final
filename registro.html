@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmaSalud Perú - Delivery</title>
+    <link rel="stylesheet" href="css/registro.css">
+</head>
+<body>
+    <!-- Confirmación visual (checkbox invisible) -->
+    <input type="checkbox" id="check-confirmacion">
+
+    <!-- ENCABEZADO -->
+    <header>
+        <div class="logo">
+            <img src="img/cruz-logo.jpg" alt="Logo Cruz" class="cruz-img">
+            <h1>FarmaSalud Perú</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="registro.html">Delivery</a></li>
+                <li><a href="alerta.html">Alerta</a></li>
+                <li><a href="ubicacion.html">Ubicación</a></li>
+                <li>
+                    <div id="auth-container">
+                        <a href="login.html" class="btn-login-header">Iniciar Sesión</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <section class="content-section">
+            <h2>Solicitud de Delivery de Medicamentos</h2>
+            <form id="form-delivery">
+                <fieldset>
+                    <legend>Datos para el Envío</legend>
+
+                    <label for="del-nombre">Nombre Completo:</label>
+                    <input type="text" id="del-nombre" required placeholder="Ingresa tu nombre">
+
+                    <label for="del-direccion">Dirección de Entrega:</label>
+                    <input type="text" id="del-direccion" required placeholder="Ingresa tu dirección">
+
+                    <label for="del-medicamentos">Medicamentos solicitados:</label>
+                    <input type="text" id="del-medicamentos" required placeholder="Ej: Paracetamol 500 mg x 10">
+
+                    <label for="del-receta">Adjuntar Receta Médica (PDF o Imagen):</label>
+                    <input type="file" id="del-receta" accept="image/*,.pdf">
+
+                    <button type="submit" id="btn-enviar-delivery" class="btn-delivery btn-enviar-delivery">Enviar Pedido</button>
+                </fieldset>
+            </form>
+
+            <div class="mensaje-confirmacion">
+                ✔ ¡Pedido de delivery registrado con éxito! Tu solicitud está siendo procesada.
+                Código de seguimiento: <strong id="codigo-seguimiento"></strong>
+            </div>
+        </section>
+    </main>
+
+    <!-- BARRA DE NAVEGACIÓN INFERIOR FIJA -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-btn btn-inicio">
+            <img src="img/inicio.png" alt="Inicio" class="nav-icon-img">
+            <span>Inicio</span>
+        </a>
+        <a href="catalogo.html" class="nav-btn btn-catalogo">
+            <img src="img/catalogo.jpg" alt="Catálogo" class="nav-icon-img">
+            <span>Catálogo</span>
+        </a>
+        <a href="registro.html" class="nav-btn btn-delivery-tab activo">
+            <img src="img/delivery.jpg" alt="Delivery" class="nav-icon-img">
+            <span>Delivery</span>
+        </a>
+        <a href="alerta.html" class="nav-btn btn-recordatorio-tab">
+            <img src="img/alerta.png" alt="Alerta" class="nav-icon-img">
+            <span>Alerta</span>
+        </a>
+        <a href="ubicacion.html" class="nav-btn btn-ubicacion">
+            <img src="img/sedes.png" alt="Sedes" class="nav-icon-img">
+            <span>Sedes</span>
+        </a>
+    </nav>
+
+    <footer>
+        <p>&copy; 2026 FarmaSalud Perú - Portal Informativo de Orientación Farmacéutica.</p>
+    </footer>
+
+    <script type="module" src="js/registro/registro.js"></script>
+</body>
+</html>
