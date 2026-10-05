@@ -21,6 +21,29 @@ function puedeCambiarEstado() {
     return usuario.rol === 'administrador' || usuario.turno === turnoActual();
 }
 
+// Muestra el turno en la parte superior del panel
+const RANGOS_TURNO = { 'mañana': '06:00 - 14:00', 'tarde': '14:00 - 22:00', 'noche': '22:00 - 06:00' };
+const infoTurno = document.getElementById('info-turno');
+
+if (infoTurno && usuario && usuario.rol !== 'cliente') {
+    const texto = document.createElement('span');
+    const punto = document.createElement('span');
+    punto.className = 'punto-turno';
+
+    if (usuario.rol === 'administrador') {
+        infoTurno.className = 'insignia-turno en-turno';
+        texto.textContent = 'Administrador: puedes cambiar el estado en cualquier horario';
+    } else if (usuario.turno === turnoActual()) {
+        infoTurno.className = 'insignia-turno en-turno';
+        texto.textContent = 'Tu turno: ' + usuario.turno + ' (' + RANGOS_TURNO[usuario.turno] + ') - En turno';
+    } else {
+        infoTurno.className = 'insignia-turno fuera-turno';
+        const suyo = usuario.turno ? usuario.turno + ' (' + RANGOS_TURNO[usuario.turno] + ')' : 'sin turno asignado';
+        texto.textContent = 'Tu turno: ' + suyo + ' - Fuera de turno (ahora es turno ' + turnoActual() + ')';
+    }
+    infoTurno.append(punto, texto);
+}
+
 // Consultar: todos los registros
 export async function listarTodos() {
     return await sql`SELECT * FROM pedidos_delivery_farmacia ORDER BY fecha_registro DESC;`;
