@@ -28,3 +28,12 @@ form input[type="text"], .select-input { padding: 8px; border: 1px solid #ccc; b
 td .btn-delivery { padding: 4px 10px; font-size: 0.85rem; }
 .btn-eliminar { background-color: #c62828; }
 .btn-eliminar:hover { background-color: #8e0000; }
+
+/* Insignia del turno (empleado / administrador) */
+.insignia-turno { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; padding: 10px 14px; border-radius: 20px; font-weight: bold; font-size: 0.95rem; animation: fadeInUp 0.5s ease; }
+.insignia-turno.en-turno { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+.insignia-turno.fuera-turno { background-color: #fff3cd; color: #856404; border: 1px solid #ffe69c; }
+.punto-turno { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+.en-turno .punto-turno { background-color: #2e7d32; animation: pulsoTurno 1.5s infinite; }
+.fuera-turno .punto-turno { background-color: #f9a825; }
+@keyframes pulsoTurno { 0% { box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.6); } 70% { box-shadow: 0 0 0 10px rgba(46, 125, 50, 0); } 100% { box-shadow: 0 0 0 0 rgba(46, 125, 50, 0); } }
