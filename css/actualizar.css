@@ -21,3 +21,21 @@ nav ul li a.btn-login-header { background-color: #2e7d32; color: #ffffff !import
 form fieldset { border: 1px solid #ddd; padding: 15px; border-radius: 6px; display: flex; flex-direction: column; gap: 12px; }
 form label { font-weight: bold; font-size: 0.9rem; }
 form input[type="text"], .select-input { padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+
+/* ===== Animación suave en imágenes ===== */
+@keyframes latidoCruz { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
+@keyframes flotarIcono { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@keyframes rebotarIcono { 0%, 100% { transform: translateY(0); } 40% { transform: translateY(-8px); } 70% { transform: translateY(-3px); } }
+
+.cruz-img { animation: latidoCruz 2.5s ease-in-out infinite; }
+.servicio-icon-img { animation: flotarIcono 3s ease-in-out infinite; }
+.servicio-card:nth-child(2) .servicio-icon-img { animation-delay: 0.4s; }
+.servicio-card:nth-child(3) .servicio-icon-img { animation-delay: 0.8s; }
+.servicio-card:nth-child(4) .servicio-icon-img { animation-delay: 1.2s; }
+.card-img { transition: transform 0.4s ease; }
+.card:hover .card-img { transform: scale(1.1); }
+.nav-btn:hover .nav-icon-img { animation: rebotarIcono 0.5s ease; }
+.nav-btn.activo .nav-icon-img { animation: rebotarIcono 0.7s ease 0.3s; }
+@media (prefers-reduced-motion: reduce) {
+    .cruz-img, .servicio-icon-img, .nav-icon-img, .card-img { animation: none !important; transition: none !important; }
+}
