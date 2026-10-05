@@ -10,10 +10,12 @@ if (usuario && usuario.rol === 'cliente') {
 
 // Turnos: mañana 06-14, tarde 14-22, noche-madrugada 22-06 (hora de Lima)
 function turnoActual() {
+    function turnoActual() {
     const h = Number(new Intl.DateTimeFormat('en-US', { hour: 'numeric', hour12: false, timeZone: 'America/Lima' }).format(new Date())) % 24;
     if (h >= 6 && h < 14) return 'mañana';
-    if (h >= 14 && h < 22) return 'tarde';
+    if (h >= 14 && h < 18) return 'tarde';
     return 'noche';
+}
 }
 
 // El administrador siempre puede cambiar el estado; el empleado solo dentro de su turno
@@ -22,7 +24,7 @@ function puedeCambiarEstado() {
 }
 
 // Muestra el turno en la parte superior del panel
-const RANGOS_TURNO = { 'mañana': '06:00 - 14:00', 'tarde': '14:00 - 22:00', 'noche': '22:00 - 06:00' };
+const RANGOS_TURNO = { 'mañana': '06:00 - 14:00', 'tarde': '14:00 - 18:00', 'noche': '18:00 - 22:00' };
 const infoTurno = document.getElementById('info-turno');
 
 if (infoTurno && usuario && usuario.rol !== 'cliente') {
