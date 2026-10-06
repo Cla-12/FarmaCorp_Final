@@ -8,14 +8,13 @@ if (usuario && usuario.rol === 'cliente') {
     window.location.href = 'registro.html';
 }
 
-// Turnos: mañana 06-14, tarde 14-22, noche-madrugada 22-06 (hora de Lima)
+// Turnos (hora de Lima): mañana 06-14, tarde 14-18, noche 18-22. De 22:00 a 06:00 no hay turno activo
 function turnoActual() {
-    function turnoActual() {
     const h = Number(new Intl.DateTimeFormat('en-US', { hour: 'numeric', hour12: false, timeZone: 'America/Lima' }).format(new Date())) % 24;
     if (h >= 6 && h < 14) return 'mañana';
     if (h >= 14 && h < 18) return 'tarde';
-    return 'noche';
-}
+    if (h >= 18 && h < 22) return 'noche';
+    return 'sin turno';
 }
 
 // El administrador siempre puede cambiar el estado; el empleado solo dentro de su turno
@@ -41,7 +40,9 @@ if (infoTurno && usuario && usuario.rol !== 'cliente') {
     } else {
         infoTurno.className = 'insignia-turno fuera-turno';
         const suyo = usuario.turno ? usuario.turno + ' (' + RANGOS_TURNO[usuario.turno] + ')' : 'sin turno asignado';
-        texto.textContent = 'Tu turno: ' + suyo + ' - Fuera de turno (ahora es turno ' + turnoActual() + ')';
+        const ahora = turnoActual();
+        const ahoraTexto = ahora === 'sin turno' ? 'ahora no hay turno activo (22:00 - 06:00)' : 'ahora es turno ' + ahora;
+        texto.textContent = 'Tu turno: ' + suyo + ' - Fuera de turno (' + ahoraTexto + ')';
     }
     infoTurno.append(punto, texto);
 }
