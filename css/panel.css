@@ -1,0 +1,60 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
+body { background-color: #f8f9fa; color: #333; }
+input[type="checkbox"] { display: none; }
+header { background: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 50%, #ffffff 100%); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.logo { display: flex; align-items: center; gap: 10px; }
+.cruz-img { width: 35px; height: 35px; object-fit: contain; }
+nav ul { display: flex; list-style: none; gap: 15px; align-items: center; }
+nav ul a { color: #1b5e20; font-weight: bold; text-decoration: none; padding: 6px 10px; border-radius: 4px; transition: color 0.3s ease, background-color 0.3s ease; }
+nav ul a:hover { color: #fff; background-color: #2e7d32; }
+nav ul li a.btn-login-header { background-color: #2e7d32; color: #ffffff !important; padding: 6px 14px; border-radius: 20px; }
+.main-container { max-width: 1000px; margin: 20px auto; padding: 0 15px; }
+.content-section { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); animation: fadeInUp 0.4s ease; }
+.content-section h2 { color: #1b5e20; margin-bottom: 15px; }
+.content-section p { margin: 8px 0; }
+.btn-delivery { display: inline-block; background-color: #2e7d32; color: white; padding: 8px 14px; text-decoration: none; border-radius: 4px; border: none; cursor: pointer; font-weight: bold; font-size: 1rem; text-align: center; transition: background-color 0.4s ease, transform 0.2s ease; }
+.btn-delivery:hover { background-color: #1b5e20; transform: scale(1.02); }
+.mensaje-confirmacion { display: none; margin-top: 15px; padding: 12px; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 4px; }
+#check-confirmacion:checked ~ .main-container .mensaje-confirmacion { display: block; animation: animarConfirmacion 0.5s ease-out; }
+@keyframes animarConfirmacion { 0% { opacity: 0; transform: scale(0.8) translateY(-10px); } 100% { opacity: 1; transform: scale(1) translateY(0); } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+.tabla-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+th { background-color: #2e7d32; color: #fff; text-align: left; padding: 8px; font-size: 0.9rem; }
+td { padding: 8px; border-bottom: 1px solid #e0e0e0; font-size: 0.9rem; }
+form fieldset { border: 1px solid #ddd; padding: 15px; border-radius: 6px; display: flex; flex-direction: column; gap: 12px; }
+form label { font-weight: bold; font-size: 0.9rem; }
+form input[type="text"], .select-input { padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+td .btn-delivery { padding: 4px 10px; font-size: 0.85rem; }
+.btn-eliminar { background-color: #c62828; }
+.btn-eliminar:hover { background-color: #8e0000; }
+
+/* Insignia del turno (empleado / administrador) */
+.insignia-turno { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; padding: 10px 14px; border-radius: 20px; font-weight: bold; font-size: 0.95rem; animation: fadeInUp 0.5s ease; }
+.insignia-turno.en-turno { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+.insignia-turno.fuera-turno { background-color: #fff3cd; color: #856404; border: 1px solid #ffe69c; }
+.punto-turno { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+.en-turno .punto-turno { background-color: #2e7d32; animation: pulsoTurno 1.5s infinite; }
+.fuera-turno .punto-turno { background-color: #f9a825; }
+@keyframes pulsoTurno { 0% { box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.6); } 70% { box-shadow: 0 0 0 10px rgba(46, 125, 50, 0); } 100% { box-shadow: 0 0 0 0 rgba(46, 125, 50, 0); } }
+
+/* ===== Animación suave en imágenes ===== */
+@keyframes latidoCruz { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
+@keyframes flotarIcono { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@keyframes rebotarIcono { 0%, 100% { transform: translateY(0); } 40% { transform: translateY(-8px); } 70% { transform: translateY(-3px); } }
+
+.cruz-img { animation: latidoCruz 2.5s ease-in-out infinite; }
+.servicio-icon-img { animation: flotarIcono 3s ease-in-out infinite; }
+.servicio-card:nth-child(2) .servicio-icon-img { animation-delay: 0.4s; }
+.servicio-card:nth-child(3) .servicio-icon-img { animation-delay: 0.8s; }
+.servicio-card:nth-child(4) .servicio-icon-img { animation-delay: 1.2s; }
+.card-img { transition: transform 0.4s ease; }
+.card:hover .card-img { transform: scale(1.1); }
+.nav-btn:hover .nav-icon-img { animation: rebotarIcono 0.5s ease; }
+.nav-btn.activo .nav-icon-img { animation: rebotarIcono 0.7s ease 0.3s; }
+@media (prefers-reduced-motion: reduce) {
+    .cruz-img, .servicio-icon-img, .nav-icon-img, .card-img { animation: none !important; transition: none !important; }
+}
+.check-frio { display: flex; align-items: center; gap: 8px; margin: 10px 0; }
+.check-frio input[type="checkbox"] { display: inline-block; width: auto; }
+.monto-estimado { font-weight: bold; color: #1b5e20; margin: 10px 0; }

@@ -1,0 +1,149 @@
+/* login.css */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #d2f1d4 0%, #e8f7e9 50%, #d8ebd9 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Tarjeta contenedora blanca */
+.login-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Logo de Cruz Verde */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.logo-icon {
+    width: 44px;
+    height: 44px;
+    border: 3px solid #2d7a3a;
+    color: #2d7a3a;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+}
+
+.login-card h2 {
+    color: #1b5e20;
+    margin: 5px 0 2px 0;
+    font-size: 1.4rem;
+}
+
+.subtitle {
+    color: #777777;
+    font-size: 0.85rem;
+    margin: 0 0 20px 0;
+}
+
+/* Pestañas (Switch) */
+.tabs {
+    display: flex;
+    background-color: #f2f7f2;
+    border-radius: 8px;
+    padding: 4px;
+    margin-bottom: 20px;
+}
+
+.tabs button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    color: #444444;
+    font-weight: bold;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tabs button.activo {
+    background-color: #2d7a3a;
+    color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+/* Manejo de visibilidad de Formularios */
+form {
+    display: none;
+    text-align: left;
+    flex-direction: column;
+}
+
+form.activo {
+    display: flex;
+}
+
+/* Labels e Inputs */
+label {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #2d7a3a;
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 0.9rem;
+}
+
+input:focus {
+    border-color: #2d7a3a;
+    outline: none;
+}
+
+/* Botón Entrar / Registrarse */
+.btn-submit {
+    background-color: #2d7a3a;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    background-color: #23612e;
+}
+
+/* Enlace regresar */
+.volver-link {
+    display: block;
+    margin-top: 20px;
+    color: #2d7a3a;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.volver-link:hover {
+    text-decoration: underline;
+}
